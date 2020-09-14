@@ -1,0 +1,15 @@
+{
+    "eslint.options": { "configFile": "./.eslintrc.json" },
+    "eslint.validate": ["json", "typescript"],
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true
+    },
+    "typescript.tsdk": "node_modules\\typescript\\lib",
+    "mocha.files.glob": "./packages/*/__tests__/**/*.test.ts",
+    "mocha.requires": [
+        "ts-node/register"
+    ],
+    "cSpell.words": [
+        "Unsubscribable"
+    ],
+}

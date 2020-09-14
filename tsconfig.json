@@ -1,0 +1,24 @@
+{
+    "extends": "./tsconfig.base.json",
+
+    "compilerOptions": {
+        "baseUrl": ".",
+        "paths": {
+            "@reactive-dom/*": ["packages/*/src"]
+        },
+        "module": "commonjs", // https://github.com/TypeStrong/ts-node/issues/182
+        "types": ["mocha"]
+    },
+
+    "typedocOptions": {
+        "mode": "modules",
+        "target": "ES6",
+        "out": "docs",
+        "exclude": ["**/node_modules/**", "**/lib/**", "**/__tests__/**"],
+        "excludeNotExported": true,
+        "excludePrivate": true,
+        "name": "Reactive DOM",
+        "readme": "./README.md",
+        "external-modulemap": ".*/packages/([\\w\\-_]+)/"
+    }
+}
