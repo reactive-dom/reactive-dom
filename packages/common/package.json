@@ -1,0 +1,45 @@
+{
+    "name": "@reactive-dom/common",
+    "version": "0.1.0",
+    "description": "Common APIs used to build and structure a Reactive DOM application.",
+    "keywords": [
+        "reactive-dom",
+        "reactive",
+        "dom",
+        "rxjs"
+    ],
+    "author": "Simon Farrugia <simonfarrugia26@gmail.com>",
+    "homepage": "https://github.com/reactive-dom/reactive-dom/tree/master/packages/common#readme",
+    "license": "MIT",
+    "main": "dist/cjs/index.js",
+    "module": "dist/esm/index.js",
+    "sideEffects": false,
+    "unpkg": "dist/umd.min/index.js",
+    "types": "dist/types/index.d.ts",
+    "directories": {
+        "lib": "lib",
+        "test": "__tests__"
+    },
+    "files": [
+        "dist"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/reactive-dom/reactive-dom.git"
+    },
+    "scripts": {
+        "clean": "rm -rf ./dist && rm -rf tsconfig.build.tsbuildinfo && rm -rf ./.nyc_output",
+        "compile": "tsc -b tsconfig.build.json",
+        "build": "npm run clean && npx rollup -c",
+        "prepublishOnly": "npm run build",
+        "test": "mocha --colors -r ts-node/register __tests__/**/*.test.ts",
+        "coverage": "nyc -r text -e .ts npm run test"
+    },
+    "peerDependencies": {
+        "rxjs": "^6.5.2"
+    },
+    "dependencies": {
+        "@reactive-dom/api": "0.1.0",
+        "@reactive-dom/core": "0.1.0"
+    }
+}
